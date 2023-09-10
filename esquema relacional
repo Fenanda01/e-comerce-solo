@@ -1,0 +1,60 @@
+Tabela de Clientes (clients)
+
+idClient (Chave Primária)
+Fname (Primeiro Nome)
+Lname (Sobrenome)
+FedId (CPF)
+PhoneNumber (Número de Telefone)
+Email (Endereço de Email)
+
+Tabela de Veículos (vehicles)
+
+idVehicle (Chave Primária)
+idClient (Chave Estrangeira para clients)
+CarModel (Modelo do Carro)
+CarBrand (Marca do Carro)
+CarColor (Cor do Carro)
+LicensePlate (Placa do Carro)
+
+Tabela de Mecânicos (mechanics)
+
+idMechanic (Chave Primária)
+Mname (Nome do Mecânico)
+MFedId (CPF do Mecânico)
+HourlyRate (Taxa por Hora)
+
+Tabela de Peças de Reposição (autoParts)
+
+idPart (Chave Primária)
+PartName (Nome da Peça)
+PartCost (Custo da Peça)
+PartStatus (Status da Peça: Disponível, Fora de Estoque, Solicitado)
+
+Tabela de Solicitações de Serviço (serviceRequests)
+
+idRequest (Chave Primária)
+idVehicle (Chave Estrangeira para vehicles)
+RequestType (Tipo de Solicitação: Reparo, Revisão, Manutenção, etc.)
+Description (Descrição do Serviço)
+Status (Status da Solicitação: Aprovado, Em Andamento, Concluído, Cancelado)
+
+Tabela de Serviços de Mecânicos (mechanicService)
+
+idMService (Chave Primária)
+idRequest (Chave Estrangeira para serviceRequests)
+idMechanic (Chave Estrangeira para mechanics)
+WorkHours (Horas de Trabalho)
+
+Tabela de Peças de Serviço (partService)
+
+idPService (Chave Primária)
+idRequest (Chave Estrangeira para serviceRequests)
+idPart (Chave Estrangeira para autoParts)
+PQuantity (Quantidade de Peças Usadas no Serviço)
+
+Tabela de Pagamentos (payments)
+
+idPayment (Chave Primária)
+idClient (Chave Estrangeira para clients)
+PaymentMethod (Método de Pagamento: Crédito, Débito, Transferência, Dinheiro)
+PaymentStatus (Status do Pagamento: Pendente, Concluído, Estornado)
